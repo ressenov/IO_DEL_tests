@@ -1,9 +1,9 @@
-package systemManagement;
+package systemManagementTests;
 
 import Data.Data;
-import dataElements.ArchiveEntry;
-import dataElements.Person;
-import dataElements.Report;
+import dataElementsTests.ArchiveEntry;
+import dataElementsTests.Person;
+import dataElementsTests.Report;
 import org.junit.jupiter.api.Test;
 import mockit.Expectations;
 import mockit.Mocked;

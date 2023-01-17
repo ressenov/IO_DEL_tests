@@ -1,19 +1,11 @@
 package Data;
 
-import dataElements.Address;
-import dataElements.Person;
+import dataElementsTests.Address;
+import dataElementsTests.Person;
 
 import java.time.LocalDate;
 
 public class Data {
-
-    public static void fillDatabaseWithEntries(){
-
-    }
-
-    public static void fillArchiveWithEntries(){
-
-    }
 
     public static Person returnSamplePerson(){
          Person person = new Person("Imie", "DrugieImie",

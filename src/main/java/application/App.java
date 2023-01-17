@@ -1,11 +1,11 @@
 package application;
 
-import dataElements.Address;
-import dataElements.AuthenticationDocument;
-import dataElements.Person;
-import dataElements.Report;
-import systemManagement.DatabaseManager;
-import systemManagement.DocumentManager;
+import dataElementsTests.Address;
+import dataElementsTests.AuthenticationDocument;
+import dataElementsTests.Person;
+import dataElementsTests.Report;
+import systemManagementTests.DatabaseManager;
+import systemManagementTests.DocumentManager;
 
 import java.time.LocalDate;
 import java.util.Scanner;

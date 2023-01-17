@@ -1,6 +1,6 @@
-package dataElements;
+package dataElementsTests;
 
-import systemManagement.DatabaseManager;
+import systemManagementTests.DatabaseManager;
 
 import java.time.LocalDate;
 

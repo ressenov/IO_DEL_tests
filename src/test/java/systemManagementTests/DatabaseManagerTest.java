@@ -1,8 +1,8 @@
-package systemManagement;
+package systemManagementTests;
 
 import Data.Data;
-import dataElements.ArchiveEntry;
-import dataElements.Person;
+import dataElementsTests.ArchiveEntry;
+import dataElementsTests.Person;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

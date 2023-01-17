@@ -1,8 +1,8 @@
-package systemManagement;
+package systemManagementTests;
 
-import dataElements.AuthenticationDocument;
-import dataElements.Person;
-import dataElements.Report;
+import dataElementsTests.AuthenticationDocument;
+import dataElementsTests.Person;
+import dataElementsTests.Report;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
