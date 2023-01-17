@@ -1,8 +1,8 @@
 package dataElementsTests;
 
 import Data.SampleData;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class AddressTest {
     Address address = SampleData.returnSampleAddress();

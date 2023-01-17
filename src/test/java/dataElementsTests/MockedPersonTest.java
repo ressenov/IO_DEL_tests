@@ -3,8 +3,8 @@ package dataElementsTests;
 import mockit.Expectations;
 import mockit.Injectable;
 import mockit.Mocked;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class MockedPersonTest {
     @Mocked
@@ -43,7 +43,7 @@ public class MockedPersonTest {
     }
 
     @Test
-    void getRegisteredHouseNumberTest(){
+    public void getRegisteredHouseNumberTest(){
         new Expectations() {
             {
                 injectedAddress.getHouseNumber(); result = "5";
@@ -53,7 +53,7 @@ public class MockedPersonTest {
     }
 
     @Test
-    void getRegisteredApartamentNumberTest(){
+    public void getRegisteredApartamentNumberTest(){
         new Expectations() {
             {
                 injectedAddress.getApartamentNumber(); result = "11";

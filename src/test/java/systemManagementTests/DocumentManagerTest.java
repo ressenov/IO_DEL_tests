@@ -4,10 +4,11 @@ import Data.SampleData;
 import dataElementsTests.ArchiveEntry;
 import dataElementsTests.Person;
 import dataElementsTests.Report;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 import mockit.Expectations;
 import mockit.Mocked;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class DocumentManagerTest {
     DatabaseManager databaseManager;
 
     @Test
-    void generateReportTest(){
+    public void generateReportTest(){
         List<ArchiveEntry> archiveMock = new ArrayList<>();
 
         Person personBorn = SampleData.returnSamplePerson();
@@ -55,7 +56,7 @@ public class DocumentManagerTest {
 
         assertEquals(1, report.getNumberOfBirths());
         assertEquals(2, report.getNumberOfDeaths());
-        assertEquals(65, report.getMeanDeathAge());
+        assertEquals(65, report.getMeanDeathAge(), 0.01);
         assertEquals("1 : 2", report.getBirthToDeathRatio());
     }
 

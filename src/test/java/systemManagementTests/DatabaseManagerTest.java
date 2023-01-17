@@ -3,25 +3,25 @@ package systemManagementTests;
 import Data.SampleData;
 import dataElementsTests.ArchiveEntry;
 import dataElementsTests.Person;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 public class DatabaseManagerTest {
 
     DatabaseManager databaseManager = new DatabaseManager();
 
     @Test
-    void generatePESELTest(){
+    public void generatePESELTest(){
         Person person = SampleData.returnSamplePerson();
 
         assertEquals("00300700000", databaseManager.generatePESEL(person));
     }
 
     @Test
-    void addToArchiveTest(){
+    public void addToArchiveTest(){
         Person person = SampleData.returnSamplePerson();
         Person changedInfoPerson = SampleData.returnSamplePerson();
 
@@ -36,7 +36,7 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    void editPersonalDataTest(){
+    public void editPersonalDataTest(){
         Person person = SampleData.returnSamplePerson();
         Person changedInfoPerson = SampleData.returnSamplePerson();
 
@@ -53,7 +53,7 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    void addNewPersonTest(){
+    public void addNewPersonTest(){
         Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
@@ -63,7 +63,7 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    void searchPersonTestSuccess(){
+    public void searchPersonTestSuccess(){
         Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
@@ -73,7 +73,7 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    void searchPersonTestFail(){
+    public void searchPersonTestFail(){
         Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
