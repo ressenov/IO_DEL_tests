@@ -5,7 +5,7 @@ import dataElementsTests.Person;
 
 import java.time.LocalDate;
 
-public class Data {
+public class SampleData {
 
     public static Person returnSamplePerson(){
          Person person = new Person("Imie", "DrugieImie",

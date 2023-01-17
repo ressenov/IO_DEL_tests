@@ -1,11 +1,11 @@
 package dataElementsTests;
 
-import Data.Data;
+import Data.SampleData;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AddressTest {
-    Address address = Data.returnSampleAddress();
+    Address address = SampleData.returnSampleAddress();
 
     @Test
     public void getPostalCodeTest(){

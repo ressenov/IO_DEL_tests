@@ -1,6 +1,6 @@
 package systemManagementTests;
 
-import Data.Data;
+import Data.SampleData;
 import dataElementsTests.ArchiveEntry;
 import dataElementsTests.Person;
 import dataElementsTests.Report;
@@ -23,20 +23,20 @@ public class DocumentManagerTest {
     void generateReportTest(){
         List<ArchiveEntry> archiveMock = new ArrayList<>();
 
-        Person personBorn = Data.returnSamplePerson();
+        Person personBorn = SampleData.returnSamplePerson();
 
         ArchiveEntry entryBirth = new ArchiveEntry(personBorn, personBorn,
                 LocalDate.of(2022, 6, 6), "Urzednik", "BIRTH");
         archiveMock.add(entryBirth);
 
-        Person personDead1 = Data.returnSamplePerson();
+        Person personDead1 = SampleData.returnSamplePerson();
 
         personDead1.setDateOfDeath(LocalDate.of(2060, 1, 1));
         ArchiveEntry entryDeath1 = new ArchiveEntry(personDead1, personDead1,
                 LocalDate.of(2022, 6, 6), "Urzednik", "DEATH");
         archiveMock.add(entryDeath1);
 
-        Person personDead2 = Data.returnSamplePerson();
+        Person personDead2 = SampleData.returnSamplePerson();
 
         personDead2.setDateOfDeath(LocalDate.of(2070, 1, 1));
         ArchiveEntry entryDeath2 = new ArchiveEntry(personDead2, personDead2,

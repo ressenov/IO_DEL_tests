@@ -1,6 +1,6 @@
 package systemManagementTests;
 
-import Data.Data;
+import Data.SampleData;
 import dataElementsTests.ArchiveEntry;
 import dataElementsTests.Person;
 import org.junit.jupiter.api.Test;
@@ -15,15 +15,15 @@ public class DatabaseManagerTest {
 
     @Test
     void generatePESELTest(){
-        Person person = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
 
         assertEquals("00300700000", databaseManager.generatePESEL(person));
     }
 
     @Test
     void addToArchiveTest(){
-        Person person = Data.returnSamplePerson();
-        Person changedInfoPerson = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
+        Person changedInfoPerson = SampleData.returnSamplePerson();
 
         changedInfoPerson.setDateOfDeath(LocalDate.of(2022, 12, 31));
 
@@ -37,8 +37,8 @@ public class DatabaseManagerTest {
 
     @Test
     void editPersonalDataTest(){
-        Person person = Data.returnSamplePerson();
-        Person changedInfoPerson = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
+        Person changedInfoPerson = SampleData.returnSamplePerson();
 
         changedInfoPerson.setFirstName("Nowe imie");
         changedInfoPerson.setSurname("Nowe nazwisko");
@@ -54,7 +54,7 @@ public class DatabaseManagerTest {
 
     @Test
     void addNewPersonTest(){
-        Person person = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
         assertTrue(DatabaseManager.getDatabase().contains(person));
@@ -64,7 +64,7 @@ public class DatabaseManagerTest {
 
     @Test
     void searchPersonTestSuccess(){
-        Person person = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
         assertNotNull(databaseManager.searchPerson("00300700000"));
@@ -74,7 +74,7 @@ public class DatabaseManagerTest {
 
     @Test
     void searchPersonTestFail(){
-        Person person = Data.returnSamplePerson();
+        Person person = SampleData.returnSamplePerson();
         databaseManager.addNewPerson(person, LocalDate.of(2023, 1, 15), "Urzednik");
 
         assertNull(databaseManager.searchPerson("00000000000"));

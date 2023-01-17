@@ -14,7 +14,7 @@ public class AppTest {
 
     @Test
     void testTest(){
-        systemInMock.provideLines("1", "2");
+        systemInMock.provideLines("1", "2", "3");
 
         assertEquals(1, app.testTest());
         assertEquals(2, app.testTest());

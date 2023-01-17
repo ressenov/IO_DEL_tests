@@ -1,6 +1,6 @@
 package dataElementsTests;
 
-import Data.Data;
+import Data.SampleData;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class PersonTest {
-    Person person = Data.returnSamplePerson();
+    Person person = SampleData.returnSamplePerson();
 
 
     @Test
