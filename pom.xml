@@ -7,6 +7,8 @@
     <groupId>org.example</groupId>
     <artifactId>IO_DEL_tests</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.jmockit/jmockit -->
         <dependency>
@@ -66,14 +68,54 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.fitnesse</groupId>
+            <artifactId>fitnesse</artifactId>
+            <version>20221219</version>
+            <scope>runtime</scope>
+        </dependency>
 
 
     </dependencies>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>fitnesse</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <id>start-fitnesse</id>
+                                <phase>test</phase>
+                                <configuration>
+                                    <target>
+                                        <echo taskname="fitnesse" message="Starting FitNesse…" />
+                                        <java classname="fitnesseMain.FitNesseMain" classpathref="maven.runtime.classpath" fork="true">
+                                            <arg line="-p 8000" />
+                                            <arg line="-d ." />
+                                        </java>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
